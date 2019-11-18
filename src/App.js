@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'; //useState is for state management and useEffect is for data loading
+import Moment from 'moment'; //for date/time adjustment
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import './App.css';
+import Home from './pages/Home';
+import Create from './pages/Create';
+import Contribute from './pages/Contribute';
 
-function App() {
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/create">Create</Link>
+            </li>
+          </ul>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/create" component={Create}/>
+              <Route exact path="/contribute/:id" component={Contribute}/>
+            </Switch>
+          </div>
+        </header>
+
+      </div>
+    </Router>
   );
 }
 
