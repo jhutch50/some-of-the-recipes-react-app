@@ -82,7 +82,7 @@ export default class Create extends React.Component{
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-                //window.location = "/";
+                window.location = "/";
             })
     }
     

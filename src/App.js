@@ -11,6 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <header>
+          <h1>SOMEofTheRecipes</h1>
           <ul>
             <li>
               <Link to="/">Home</Link>

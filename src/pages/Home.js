@@ -20,17 +20,22 @@ function Home(){
     }, []); //helps with data fetching, but only when the componant maps, [] lets us know we only want to fetch data one time
 
 
+
    
     return(
     
     <div class="slider">
         {
             data.map(recipe => (
+
+
                 
                 <div class="container">
                     <div class="recipe">
-                        <div class="front">
+                        <div class="front" >
                             <h2>{recipe.title}</h2>
+                            <img src={recipe.imageURL} height="200" width="200" alt={recipe.imageURL}/>
+                            
 
                             </div> 
                         <div class="back">
