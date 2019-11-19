@@ -10,7 +10,8 @@ export default class Contribute extends React.Component{
         time: this.props.location.state.time,
         description: this.props.location.state.description,
         steps: this.props.location.state.steps,
-        ingredients: this.props.location.state.ingredients
+        ingredients: this.props.location.state.ingredients,
+        imageURL: this.props.location.state.imageURL
     }  
 
     changes = event => {
@@ -21,7 +22,9 @@ export default class Contribute extends React.Component{
         else if(event.target.name === 'time')
             this.setState({time: event.target.value});
         else if(event.target.name === 'description')
-            this.setState({description: event.target.value});    
+            this.setState({description: event.target.value}); 
+        else if(event.target.name === 'imageURL')
+            this.setState({imageURL: event.target.value});     
             
 
     }
@@ -74,7 +77,8 @@ export default class Contribute extends React.Component{
             time: this.state.time,
             description: this.state.description,
             steps: this.state.steps,
-            ingredients: this.state.ingredients
+            ingredients: this.state.ingredients,
+            imageURL: this.state.imageURL
         }
 
         console.log(recipe);
@@ -114,6 +118,10 @@ export default class Contribute extends React.Component{
                     <label>
                         Recipe Time to Make in Minutes:
                         <input type="text" name="time" onChange={this.changes} defaultValue={this.props.location.state.time}/>
+                    </label>
+                    <label>
+                        Image Link:
+                        <input type="text" name="imageURL" onChange={this.changes} defaultValue={this.props.location.state.imageURL}/>
                     </label>
                     <label>
                         Recipe Description:

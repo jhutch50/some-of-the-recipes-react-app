@@ -63,7 +63,8 @@ function Home(){
                                     time: recipe.time,
                                     description: recipe.description,
                                     steps: recipe.steps,
-                                    ingredients: recipe.ingredients
+                                    ingredients: recipe.ingredients,
+                                    imageURL: recipe.imageURL
                                 }
                             }                          
                             }>Edit</Link>

@@ -11,7 +11,8 @@ export default class Create extends React.Component{
         time: '',
         description: '',
         steps: [],
-        ingredients: []
+        ingredients: [],
+        imageURL: ''
     }  
 
     changes = event => {
@@ -23,7 +24,8 @@ export default class Create extends React.Component{
             this.setState({time: event.target.value});
         else if(event.target.name === 'description')
             this.setState({description: event.target.value});    
-            
+        else if(event.target.name === 'imageURL')
+            this.setState({imageURL: event.target.value});                
 
     }
 
@@ -73,7 +75,8 @@ export default class Create extends React.Component{
             time: this.state.time,
             description: this.state.description,
             steps: this.state.steps,
-            ingredients: this.state.ingredients
+            ingredients: this.state.ingredients,
+            imageURL: this.state.imageURL
         }
 
         console.log(recipe);
@@ -103,6 +106,10 @@ export default class Create extends React.Component{
                 <label>
                     Recipe Time to Make in Minutes:
                     <input type="text" name="time" onChange={this.changes} />
+                </label>
+                <label>
+                    Image Link:
+                    <input type="text" name="imageURL" onChange={this.changes} />
                 </label>
                 <label>
                     Recipe Description:
